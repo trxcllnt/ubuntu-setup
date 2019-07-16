@@ -1,0 +1,3 @@
+[submodule "Sierra-gtk-theme"]
+	path = Sierra-gtk-theme
+	url = https://github.com/vinceliuice/Sierra-gtk-theme.git

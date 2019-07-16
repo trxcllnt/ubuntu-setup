@@ -1,0 +1,31 @@
+{
+    "usageCount": 2, 
+    "omitTrigger": false, 
+    "prompt": false, 
+    "description": "cmd-select-beginning", 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [], 
+        "immediate": false, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "hotkey": {
+        "hotKey": "<left>", 
+        "modifiers": [
+            "<alt>", 
+            "<shift>"
+        ]
+    }, 
+    "modes": [
+        3
+    ], 
+    "showInTrayMenu": false, 
+    "filter": {
+        "regex": null, 
+        "isRecursive": false
+    }, 
+    "type": "script", 
+    "store": {}
+}
