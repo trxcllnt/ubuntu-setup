@@ -1,6 +1,10 @@
 # Make an NVIDIA-powered Ubuntu 18.04.2 fresh install look and feel a bit more like MacOS
 
-This is the process I go through to set up a fresh Ubuntu 18.04.2 install. I've left off extra apps I install like chrome, vscode, docker, docker-compose, nvidia-docker etc.
+This is the process I go through to set up a fresh Ubuntu 18.04.2 install. This repo describes how to install the various plugins,applications, configurations, and key bindings to make your Ubuntu install look and feel more like MacOS.
+
+![Ubuntu 18.04.2 Gnome Screenshot](https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/images/screenshot.png)
+
+I've left off extra apps I install like chrome, vscode, docker, docker-compose, nvidia-docker etc.
 
 #### Disclaimer: these instructions were typed half by hand from memory. Be sure to double check before hitting run in case I typo'd
 
@@ -54,7 +58,7 @@ Now open Gnome Tweak Tool and enable all the extensions. Some of them won't acti
     cd OSX-ElCap && sudo ./install.sh && cd ~
     ```
 * Install [High Sierra theme](https://github.com/vinceliuice/Sierra-gtk-theme).
-  Note: recently some styles were added that broke the Gnome Global AppMenu, so I've pinned it to a working commit for this setup as a submodule.
+  Note: recently some styles were added that [broke the Gnome Global AppMenu](https://github.com/vinceliuice/Sierra-gtk-theme/issues/42), so I've pinned it to a working commit for this setup as a submodule.
     ```shell
     git submodule update --init --remote --recursive
     cd Sierra-gtk-theme && sudo ./install.sh -g -na && cd ~
@@ -109,3 +113,7 @@ This will automatically set your system cursors, icons, fonts, themes, and exten
 ### Github Desktop (with native menubars)
 There was a recent commit that made GH Desktop use windows metro style titlebar/icons. If you're fine with that, great. If not, you can install an older release, or [use docker to build the latest source locally](https://github.com/shiftkey/desktop/issues/149).
 
+### Ultrawide Wallpaper
+I have a [49" Samsung C49RG9](https://www.samsung.com/levant/monitors/c49rg9/) monitor with a 5120x1440 native resolution. It's difficult to find dark-mode-compatible wallpapers this large, but I've included mine in the images folder.
+
+Since X still doesn't support separate wallpapers on each monitor (and the two most popular solutions didn't work for me), I've included a version that extends the image out with a black background to cover my laptop's background. This way you can use the Gnome Tweak Tool to set the wallpaper mode to "span" so the image isn't scaled.
