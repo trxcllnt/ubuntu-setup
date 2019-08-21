@@ -55,13 +55,13 @@ Now open Gnome Tweak Tool and enable all the extensions. Some of them won't acti
 * Install OS X [cursors](https://www.gnome-look.org/p/1084939/)
     ```shell
     tar -xvjf 175749-OSX-ElCap.tar.bz2
-    cd OSX-ElCap && sudo ./install.sh && cd ~
+    cd OSX-ElCap && sudo ./install.sh && cd -
     ```
 * Install [High Sierra theme](https://github.com/vinceliuice/Sierra-gtk-theme).
   Note: recently some styles were added that [broke the Gnome Global AppMenu](https://github.com/vinceliuice/Sierra-gtk-theme/issues/42), so I've pinned it to a working commit for this setup as a submodule.
     ```shell
     git submodule update --init --remote --recursive
-    cd Sierra-gtk-theme && sudo ./install.sh -g -na && cd ~
+    cd Sierra-gtk-theme && sudo ./install.sh -g -na && cd -
     ```
 
 ### Make Gnome behave like MacOS
