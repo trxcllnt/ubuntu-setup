@@ -1,3 +1,3 @@
-[submodule "Sierra-gtk-theme"]
-	path = Sierra-gtk-theme
-	url = https://github.com/vinceliuice/Sierra-gtk-theme.git
+[submodule "slack-black-theme"]
+	path = slack-black-theme
+	url = https://github.com/trxcllnt/slack-black-theme.git

@@ -1,0 +1,100 @@
+{
+    "update.mode": "none",
+    "update.showReleaseNotes": true,
+    "files.associations": {
+        "*.cu": "cpp",
+        "*.cuh": "cpp"
+    },
+    "C_Cpp.updateChannel": "Insiders",
+    "C_Cpp.exclusionPolicy": "checkFolders",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "/usr/local/cuda/include",
+        "${env:NODE_INCLUDE_PATH}"
+    ],
+    "C_Cpp.default.browse.path": [
+        "${workspaceFolder}",
+        "/usr/local/cuda/include",
+        "${env:NODE_INCLUDE_PATH}"
+    ],
+    "search.exclude": {
+        "**/build/include": true
+    },
+
+    // Controls how lines should wrap. Can be:
+    //  - 'off' (disable wrapping),
+    //  - 'on' (viewport wrapping),
+    //  - 'wordWrapColumn' (wrap at `editor.wordWrapColumn`) or
+    //  - 'bounded' (wrap at minimum of viewport and `editor.wordWrapColumn`).
+    "editor.wordWrap": "off",
+    "debug.toolBarLocation": "docked",
+    "editor.fontFamily": "Menlo, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    // The modifier to be used to add multiple cursors with the mouse. `ctrlCmd` maps to `Control` on Windows and Linux and to `Command` on OSX. The Go To Definition and Open Link mouse gestures will adapt such that they do not conflict with the multicursor modifier.
+    "editor.multiCursorModifier": "alt",
+    // Enable usage data and errors to be sent to Microsoft.
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    // Controls if the explorer should automatically reveal and select files when opening them.
+    "explorer.autoReveal": false,
+    "window.zoomLevel": 0,
+    // Controls whether the terminal cursor blinks.
+    "terminal.integrated.cursorBlinking": true,
+    // Controls the style of terminal cursor.
+    "terminal.integrated.cursorStyle": "line",
+    // Treat the option key as the meta key in the terminal on macOS.
+    "terminal.integrated.macOptionIsMeta": true,
+    // Scans devDependencies as well
+    "npm-intellisense.scanDevDependencies": true,
+    // (experimental) Enables path intellisense in subfolders of modules
+    "npm-intellisense.packageSubfoldersIntellisense": true,
+    // shows build in node modules like 'path' of 'fs'
+    "npm-intellisense.showBuildInLibs": true,
+    // For import command. Use import statements instead of require()
+    "npm-intellisense.importES6": false,
+    "npm-intellisense.importQuotes": "'",
+    "npm-intellisense.importDeclarationType": "const",
+    "npm-intellisense.recursivePackageJsonLookup": true,
+    "npm.enableScriptExplorer": false,
+
+    "extensions.ignoreRecommendations": true,
+    "extensions.autoUpdate": false,
+
+    "java.errors.incompleteClasspath.severity": "ignore",
+
+    "diffEditor.ignoreTrimWhitespace": true,
+
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "javascript.preferences.quoteStyle": "single",
+
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "typescript.surveys.enabled": false,
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.tsdk": "node_modules/typescript/lib",
+
+    "explorer.confirmDelete": false,
+    "python.linting.enabled": false,
+    "python.linting.lintOnSave": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pylintUseMinimalCheckers": false,
+    "window.titleBarStyle": "native",
+
+    "workbench.colorTheme": "Monokai",
+    "workbench.sideBar.location": "left",
+    "workbench.panel.defaultLocation": "right",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.tips.enabled": false,
+
+    "outline.icons": false,
+    "outline.problems.enabled": false,
+    "outline.problems.colors": false,
+    "outline.problems.badges": false,
+    "debug.openExplorerOnEnd": true,
+
+    "terminal.integrated.rendererType": "canvas",
+    "terminal.integrated.rightClickBehavior": "selectWord",
+    "terminal.integrated.scrollback": 100000,
+    "terminal.integrated.showExitAlert": false,
+}

@@ -305,11 +305,5 @@
         "indent": true,
         "dependency": "show-item-icon",
         "value": false
-    },
-    "dbusmenu-providers": {
-        "type": "generic",
-        "default": "",
-        "value": "73400321-X11RegisterMenuWatcher,:1.109,/com/canonical/menu/4600001;73400387-X11RegisterMenuWatcher,:1.109,/com/canonical/menu/4600043;73400402-X11RegisterMenuWatcher,:1.109,/com/canonical/menu/4600052;96468993-X11RegisterMenuWatcher,:1.121,/com/canonical/menu/5C00001;96469608-X11RegisterMenuWatcher,:1.121,/com/canonical/menu/5C00268;3-GtkMenuWatcher,:1.160,/org/gnome/Terminal/menus/menubar,/org/gnome/Terminal/window/1,/org/gnome/Terminal;7-GtkMenuWatcher,:1.248,/org/appmenu/gtk/window/2,/org/gnome/Nautilus/window/2,/org/gnome/Nautilus;8-GtkMenuWatcher,:1.248,/org/appmenu/gtk/window/10,/org/gnome/Nautilus/window/3,/org/gnome/Nautilus;9-GtkMenuWatcher,:1.248,/org/appmenu/gtk/window/13,/org/gnome/Nautilus/window/4,/org/gnome/Nautilus;10-GtkMenuWatcher,:1.248,/org/appmenu/gtk/window/19,null,null;"
-    },
-    "__md5__": "799d4f590ba75108a7ac9207c0918120"
+    }
 }
