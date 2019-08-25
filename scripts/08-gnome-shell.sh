@@ -4,7 +4,8 @@ cd $(dirname "$(realpath "$0")")/../
 
 AUTOKEY_VERSION="0.95.7"
 
-cp images/*.jpeg ~/Pictures/
+
+mkdir -p ~/Pictures && cp images/*.jpeg ~/Pictures/
 
 sudo apt install -y \
     appmenu-gtk3-module \
