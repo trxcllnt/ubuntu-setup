@@ -10,7 +10,7 @@ sudo apt update \
     apt-transport-https ca-certificates gnupg-agent software-properties-common
 
 ./scripts/01-cuda.sh
-./scripts/02-git.sh
+./scripts/02-utils.sh
 ./scripts/03-docker.sh
 ./scripts/04-cmake.sh
 ./scripts/05-node.sh

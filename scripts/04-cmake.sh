@@ -9,7 +9,7 @@ curl -o ./cmake-${CMAKE_VERSION}.tar.gz \
      -L https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}.tar.gz \
  && tar -xvzf cmake-${CMAKE_VERSION}.tar.gz \
  && cd cmake-${CMAKE_VERSION} \
- && ./bootstrap --qt-gui --system-curl \
+ && ./bootstrap --qt-gui --system-curl --parallel=$(nproc) \
  && sudo make install -j \
  && cd - && rm -rf ./cmake-${CMAKE_VERSION} ./cmake-${CMAKE_VERSION}.tar.gz
 

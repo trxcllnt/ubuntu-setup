@@ -7,4 +7,4 @@ wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.0.2-amd64.d
  && sudo apt install ./slack-desktop-*.deb \
  && rm -rf ./slack-desktop-*.deb
 
-cd slack-black-theme && sudo bash ./darkSlack.sh && cd -
+cd slack-black-theme && bash ./darkSlack.sh || true && cd -
