@@ -242,14 +242,14 @@
     },
     "show-boxpointer": {
         "type": "checkbox",
-        "default": true,
+        "default": false,
         "description": "Show the boxpointers",
         "tooltip": "Select if you want to show the boxpointer of all floating menus.",
         "value": false
     },
     "align-menu-launcher": {
         "type": "checkbox",
-        "default": false,
+        "default": true,
         "description": "Align all menus with his launcher",
         "tooltip": "Select if you want to align all menus with his launcher.",
         "value": true

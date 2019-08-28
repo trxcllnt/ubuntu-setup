@@ -2,12 +2,19 @@
 
 cd $(dirname "$(realpath "$0")")/../
 
+DOCKER_COMPOSE_VERSION="1.25.0-rc2"
+
 # Install docker-ce
 release=$(lsb_release -cs) \
  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - \
  && sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $release stable" \
  && sudo apt install -y docker-ce \
  && sudo usermod -aG docker $USER
+
+# Install docker-compose
+sudo curl \
+    -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-`uname -s`-`uname -m` \
+    -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose
 
 # Install nvidia-docker2
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
