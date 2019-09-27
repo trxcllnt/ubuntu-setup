@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
+set -e
+set -o errexit
+
 cd $(dirname "$(realpath "$0")")/../
 
 AUTOKEY_VERSION="0.95.7"
-
 
 mkdir -p ~/Pictures && cp images/*.jpeg ~/Pictures/
 

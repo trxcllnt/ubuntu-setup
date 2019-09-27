@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -e
+set -o errexit
+
 export DEBIAN_FRONTEND=noninteractive
 
 # Prerequisites
@@ -10,11 +13,4 @@ sudo apt update \
     apt-transport-https ca-certificates gnupg-agent software-properties-common \
  && sudo apt autoremove -y
 
-bash -i ./scripts/01-cuda.sh
-bash -i ./scripts/02-utils.sh
-bash -i ./scripts/03-docker.sh
-bash -i ./scripts/04-cmake.sh
-bash -i ./scripts/05-node.sh
-bash -i ./scripts/06-vscode.sh
-bash -i ./scripts/07-slack.sh
-bash -i ./scripts/08-gnome-shell.sh
+bash -i ./scripts/01-cuda.sh && source ~/.bashrc
