@@ -8,7 +8,7 @@ cd $(dirname "$(realpath "$0")")/../
 SLACK_VERSION="4.0.2"
 
 trap 'ERRCODE=$? \
-  && cd -
+  && cd - \
   && rm -rf ~/.npm ./slack-desktop-*.deb \
   && exit $ERRCODE' \
   ERR EXIT
