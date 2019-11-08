@@ -5,13 +5,16 @@ set -o errexit
 
 cd $(dirname "$(realpath "$0")")/../
 
-# Install VSCode and pin to the version with the good sidebar icons
+# Install clang-tools-10, clangd-10, and bear
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+sudo apt update && sudo apt install -y clang-tools-10 clangd-10 bear
+sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-10 100
+
+# Install vscode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/ && rm packages.microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt update
-sudo apt install -y clang-tools-8 bear code
-sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-8 100
+sudo apt update && sudo apt install -y code
 
 # Install some useful vscode extensions
 code --install-extension slevesque.shader
