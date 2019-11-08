@@ -5,7 +5,7 @@ set -o errexit
 
 cd $(dirname "$(realpath "$0")")/../
 
-CMAKE_VERSION="3.15.2"
+CMAKE_VERSION="3.15.4"
 
 # CMake
 wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}.tar.gz \
