@@ -2,24 +2,23 @@
     "update.mode": "none",
     "update.showReleaseNotes": true,
     "files.associations": {
-        "*.cu": "cpp",
-        "*.cuh": "cpp"
+        "*.cu": "cuda",
+        "*.cuh": "cuda",
     },
-    "C_Cpp.updateChannel": "Insiders",
-    "C_Cpp.exclusionPolicy": "checkFolders",
-    "C_Cpp.default.includePath": [
-        "${workspaceFolder}/**",
-        "/usr/local/cuda/include",
-        "${env:NODE_INCLUDE_PATH}"
-    ],
-    "C_Cpp.default.browse.path": [
-        "${workspaceFolder}",
-        "/usr/local/cuda/include",
-        "${env:NODE_INCLUDE_PATH}"
-    ],
     "search.exclude": {
         "**/build/include": true
     },
+
+    "clangd.syncFileEvents": true,
+    "clangd.path": "/usr/bin/clangd",
+    "clangd.semanticHighlighting": true,
+    "clangd.trace": "/home/ptaylor/.vscode/clangd.log",
+    "clangd.arguments": [
+        "--log", "verbose",
+        "--pch-storage=memory",
+        // "--background-index=false",
+        "--fallback-style", "Chromium"
+    ],
 
     // Controls how lines should wrap. Can be:
     //  - 'off' (disable wrapping),
@@ -36,6 +35,11 @@
     "telemetry.enableCrashReporter": false,
     // Controls if the explorer should automatically reveal and select files when opening them.
     "explorer.autoReveal": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+
+    "breadcrumbs.enabled": false,
+    
     "window.zoomLevel": 0,
     // Controls whether the terminal cursor blinks.
     "terminal.integrated.cursorBlinking": true,
@@ -59,11 +63,10 @@
     "extensions.ignoreRecommendations": true,
     "extensions.autoUpdate": false,
 
-    "java.errors.incompleteClasspath.severity": "ignore",
+    // "java.errors.incompleteClasspath.severity": "ignore",
 
     "diffEditor.ignoreTrimWhitespace": true,
 
-    "explorer.confirmDragAndDrop": false,
     "javascript.updateImportsOnFileMove.enabled": "never",
     "javascript.preferences.importModuleSpecifier": "relative",
     "javascript.preferences.quoteStyle": "single",
@@ -74,11 +77,33 @@
     "typescript.preferences.importModuleSpecifier": "relative",
     "typescript.tsdk": "node_modules/typescript/lib",
 
-    "explorer.confirmDelete": false,
+    "python.dataScience.enabled": false,
+    "python.dataScience.useNotebookEditor": false,
+    "python.dataScience.allowImportFromNotebook": false,
+    "python.dataScience.changeDirOnImportExport": false,
+    "python.dataScience.searchForJupyter": false,
+    "python.dataScience.showJupyterVariableExplorer": false,
+    "python.dataScience.useDefaultConfigForJupyter": false,
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+
+    "python.jediEnabled": true,
     "python.linting.enabled": false,
     "python.linting.lintOnSave": false,
+    "python.linting.mypyEnabled": false,
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.banditEnabled": false,
     "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylamaEnabled": false,
+    "python.linting.prospectorEnabled": false,
+    "python.linting.pydocstyleEnabled": false,
     "python.linting.pylintUseMinimalCheckers": false,
+
+    "python.experiments.enabled": false,
+    "python.terminal.activateEnvironment": false,
+    "python.testing.promptToConfigure": false,
+    "python.testing.autoTestDiscoverOnSaveEnabled": false,
+
     "window.titleBarStyle": "native",
 
     "workbench.colorTheme": "Monokai",
@@ -97,4 +122,12 @@
     "terminal.integrated.rightClickBehavior": "selectWord",
     "terminal.integrated.scrollback": 100000,
     "terminal.integrated.showExitAlert": false,
+    "zenMode.fullScreen": false,
+    "zenMode.hideActivityBar": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideTabs": false,
+    "zenMode.restore": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    
 }
