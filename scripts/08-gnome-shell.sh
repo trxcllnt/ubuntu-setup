@@ -5,8 +5,6 @@ set -o errexit
 
 cd $(dirname "$(realpath "$0")")/../
 
-AUTOKEY_VERSION="0.95.7"
-
 mkdir -p ~/Pictures && cp images/*.jpeg ~/Pictures/
 
 sudo apt install -y \
@@ -19,6 +17,7 @@ sudo add-apt-repository -y ppa:dyatlov-igor/sierra-theme \
  && sudo apt install -y sierra-gtk-theme-git
 
 # Install autokey
+AUTOKEY_VERSION=$(curl -s https://api.github.com/repos/autokey/autokey/releases/latest | jq -r ".tag_name" | tr -d 'v')
 wget https://github.com/autokey/autokey/releases/download/v${AUTOKEY_VERSION}/autokey-common_${AUTOKEY_VERSION}-0_all.deb \
  && wget https://github.com/autokey/autokey/releases/download/v${AUTOKEY_VERSION}/autokey-gtk_${AUTOKEY_VERSION}-0_all.deb \
  && sudo dpkg --install autokey-*.deb || true \

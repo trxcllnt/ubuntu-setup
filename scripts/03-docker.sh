@@ -5,8 +5,6 @@ set -o errexit
 
 cd $(dirname "$(realpath "$0")")/../
 
-DOCKER_COMPOSE_VERSION="1.25.0-rc2"
-
 # Install docker-ce
 release=$(lsb_release -cs) \
  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - \
@@ -15,6 +13,7 @@ release=$(lsb_release -cs) \
  && sudo usermod -aG docker $USER
 
 # Install docker-compose
+DOCKER_COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r ".tag_name" | tr -d 'v')
 sudo curl \
     -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-`uname -s`-`uname -m` \
     -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose
