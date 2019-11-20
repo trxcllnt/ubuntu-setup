@@ -31,3 +31,15 @@ if [ ! -d /usr/local/cuda-10.0/targets/x86_64-linux ]; then
     sudo mkdir -p /usr/local/cuda-10.0/targets/x86_64-linux
     sudo ln -s /usr/local/cuda-10.0/include /usr/local/cuda-10.0/targets/x86_64-linux/include
 fi
+
+
+# Install cuda-toolkit 10.1
+wget https://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run
+sudo sh cuda_10.1.243_418.87.00_linux.run --toolkit --toolkitpath=/usr/local/cuda-10.1 --silent
+rm -rf cuda_10.1.243_418.87.00_linux.run
+
+if [ ! -d /usr/local/cuda-10.1/targets/x86_64-linux ]; then
+    sudo mkdir -p /usr/local/cuda-10.1/targets/x86_64-linux
+    sudo ln -s /usr/local/cuda-10.1/include /usr/local/cuda-10.1/targets/x86_64-linux/include
+fi
+

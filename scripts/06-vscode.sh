@@ -7,6 +7,10 @@ cd $(dirname "$(realpath "$0")")/../
 
 # Install clang-tools-10, clangd-10, and bear
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+echo 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main
+deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic main
+' | sudo tee /etc/apt/sources.list.d/llvm.list
+
 sudo apt update && sudo apt install -y clang-tools-10 clangd-10 bear
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-10 100
 
