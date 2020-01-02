@@ -43,9 +43,9 @@ install_extension() {
     gnome-shell-extension-tool -e $UUID
 }
 
-install_extension "user-themegnome-shell-extensions.gcampax.github.com.v39.shell-extension"
-install_extension "dash-to-dockmicxgx.gmail.com.v67.shell-extension"
-install_extension "activities-confignls1729.v78.shell-extension"
+install_extension "user-theme@gnome-shell-extensions.gcampax.github.com.v34.shell-extension"
+install_extension "dash-to-dockmicxgx.gmail.com.v65.shell-extension"
+install_extension "activities-confignls1729.v71.shell-extension"
 
 # Install gnome-global-app-menu
 mkdir -p ~/.local/share/gnome-shell/extensions
