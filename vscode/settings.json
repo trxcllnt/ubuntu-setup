@@ -9,12 +9,17 @@
         "**/build/include": true
     },
 
+    // "lldb.logLevel": 0,
+    "lldb.verboseLogging": true,
+    // "lldb.showDisassembly": "never",
+    "lldb.suppressMissingSourceFiles": false,
+
     "clangd.syncFileEvents": true,
     "clangd.path": "/usr/bin/clangd",
     "clangd.semanticHighlighting": true,
     "clangd.trace": "/home/ptaylor/.vscode/clangd.log",
     "clangd.arguments": [
-        "--log", "verbose",
+        "--log", "info",
         "--pch-storage=memory",
         // "--background-index=false",
         "--fallback-style", "Chromium"
@@ -26,6 +31,14 @@
     //  - 'wordWrapColumn' (wrap at `editor.wordWrapColumn`) or
     //  - 'bounded' (wrap at minimum of viewport and `editor.wordWrapColumn`).
     "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 80,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "[cpp]": { "editor.tabSize": 2 },
+    "[cuda]": { "editor.tabSize": 2 },
+    "[json]": { "editor.tabSize": 2 },
+
     "debug.toolBarLocation": "docked",
     "editor.fontFamily": "Menlo, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     // The modifier to be used to add multiple cursors with the mouse. `ctrlCmd` maps to `Control` on Windows and Linux and to `Command` on OSX. The Go To Definition and Open Link mouse gestures will adapt such that they do not conflict with the multicursor modifier.
@@ -111,6 +124,7 @@
     "workbench.panel.defaultLocation": "right",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.tips.enabled": false,
+    "workbench.editor.splitSizing": "split",
 
     "outline.icons": false,
     "outline.problems.enabled": false,
@@ -122,6 +136,7 @@
     "terminal.integrated.rightClickBehavior": "selectWord",
     "terminal.integrated.scrollback": 100000,
     "terminal.integrated.showExitAlert": false,
+    "terminal.integrated.allowChords": false,
     "zenMode.fullScreen": false,
     "zenMode.hideActivityBar": false,
     "zenMode.hideLineNumbers": false,
@@ -129,5 +144,67 @@
     "zenMode.hideTabs": false,
     "zenMode.restore": true,
     "vsicons.dontShowNewVersionMessage": true,
-    
+
+    "C_Cpp.formatting": "Disabled",
+    "C_Cpp.autocomplete": "Disabled",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "C_Cpp.configurationWarnings": "Disabled",
+    "C_Cpp.autoAddFileAssociations": false,
+    "C_Cpp.vcpkg.enabled": false,
+    "diffEditor.maxComputationTime": 0,
+    "peacock.favoriteColors": [
+        {
+            "name": "Angular Red",
+            "value": "#b52e31"
+        },
+        {
+            "name": "Auth0 Orange",
+            "value": "#eb5424"
+        },
+        {
+            "name": "Azure Blue",
+            "value": "#007fff"
+        },
+        {
+            "name": "C# Purple",
+            "value": "#68217A"
+        },
+        {
+            "name": "Gatsby Purple",
+            "value": "#639"
+        },
+        {
+            "name": "Go Cyan",
+            "value": "#5dc9e2"
+        },
+        {
+            "name": "Java Blue-Gray",
+            "value": "#557c9b"
+        },
+        {
+            "name": "JavaScript Yellow",
+            "value": "#f9e64f"
+        },
+        {
+            "name": "Mandalorian Blue",
+            "value": "#1857a4"
+        },
+        {
+            "name": "Node Green",
+            "value": "#215732"
+        },
+        {
+            "name": "React Blue",
+            "value": "#00b3e6"
+        },
+        {
+            "name": "Something Different",
+            "value": "#832561"
+        },
+        {
+            "name": "Vue Green",
+            "value": "#42b883"
+        }
+    ],
 }

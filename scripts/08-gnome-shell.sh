@@ -45,7 +45,6 @@ install_extension() {
 
 install_extension "user-themegnome-shell-extensions.gcampax.github.com.v39.shell-extension"
 install_extension "dash-to-dockmicxgx.gmail.com.v67.shell-extension"
-install_extension "restart-entry@atomant.v16.shell-extension"
 install_extension "activities-confignls1729.v78.shell-extension"
 
 # Install gnome-global-app-menu

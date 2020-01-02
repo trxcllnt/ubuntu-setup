@@ -28,6 +28,7 @@ code --install-extension eg2.vscode-npm-script
 code --install-extension guyskk.language-cython
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension christian-kohler.npm-intellisense
+code --install-extension ms-vscode.cpptools
 code --install-extension kriegalex.vscode-cudacpp
 code --install-extension llvm-vs-code-extensions.vscode-clangd
 
