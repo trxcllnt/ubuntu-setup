@@ -16,7 +16,3 @@ trap 'ERRCODE=$? \
 # Slack desktop
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb
 sudo apt install -y ./slack-desktop-*.deb && sudo apt update && sudo apt upgrade -y
-
-# Slack black theme
-cd slack-black-theme
-bash -i ./darkSlack.sh
