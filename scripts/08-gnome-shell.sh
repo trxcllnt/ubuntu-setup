@@ -34,24 +34,23 @@ wget https://github.com/autokey/autokey/releases/download/v${AUTOKEY_VERSION}/au
  && mkdir -p ~/.config && cp -r autokey ~/.config/
 
 install_extension() {
-    EXTNAME="$1"
-    wget https://extensions.gnome.org/extension-data/$EXTNAME.zip
-    UUID=$(unzip -c $EXTNAME.zip metadata.json | grep uuid | cut -d \" -f4)
+    EXT_PATH="extensions/$1"
+    UUID=$(unzip -c $EXT_PATH.zip metadata.json | grep uuid | cut -d \" -f4)
     mkdir -p ~/.local/share/gnome-shell/extensions/$UUID
-    unzip -q "$EXTNAME.zip" -d ~/.local/share/gnome-shell/extensions/$UUID/
-    rm -rf "$EXTNAME.zip"
+    unzip -q "$EXT_PATH.zip" -d ~/.local/share/gnome-shell/extensions/$UUID/
     gnome-shell-extension-tool -e $UUID
 }
+
+mkdir -p ~/.local/share/gnome-shell/extensions
 
 install_extension "user-theme@gnome-shell-extensions.gcampax.github.com.v34.shell-extension"
 install_extension "dash-to-dockmicxgx.gmail.com.v65.shell-extension"
 install_extension "activities-confignls1729.v71.shell-extension"
+install_extension "gnome-shell-aggressive-gc"
+install_extension "gnomeGlobalAppMenu"
 
 # Install gnome-global-app-menu
-mkdir -p ~/.local/share/gnome-shell/extensions
 mkdir -p ~/.cinnamon-gnome/configs/gnomeGlobalAppMenu@lestcape
-unzip -q gnomeGlobalAppMenu@lestcape.zip -d ~/.local/share/gnome-shell/extensions
 cp ./gnomeGlobalAppMenu@lestcape.json ~/.cinnamon-gnome/configs/gnomeGlobalAppMenu@lestcape/
-gnome-shell-extension-tool -e /gnomeGlobalAppMenu@lestcape
 
 sudo apt install -y ./GitHubDesktop-linux-2.0.4-linux1.deb
