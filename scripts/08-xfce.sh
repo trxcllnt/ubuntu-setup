@@ -8,9 +8,8 @@ cd $(dirname "$(realpath "$0")")/../
 mkdir -p ~/Pictures && cp images/*.jpeg ~/Pictures/
 
 sudo apt install -y \
-    appmenu-gtk3-module \
-    network-manager-openconnect-gnome \
-    chrome-gnome-shell gnome-tweak-tool dconf-editor
+    xfce4-appmenu-plugin \
+    network-manager-openconnect
 
 # Install sierra-gtk-theme
 sudo add-apt-repository -y ppa:dyatlov-igor/sierra-theme \
@@ -33,24 +32,8 @@ wget https://github.com/autokey/autokey/releases/download/v${AUTOKEY_VERSION}/au
  && rm -rf autokey-*.deb \
  && mkdir -p ~/.config && cp -r autokey ~/.config/
 
-install_extension() {
-    EXT_PATH="extensions/$1"
-    UUID=$(unzip -c $EXT_PATH.zip metadata.json | grep uuid | cut -d \" -f4)
-    mkdir -p ~/.local/share/gnome-shell/extensions/$UUID
-    unzip -q "$EXT_PATH.zip" -d ~/.local/share/gnome-shell/extensions/$UUID/
-    gnome-shell-extension-tool -e $UUID
-}
-
-mkdir -p ~/.local/share/gnome-shell/extensions
-
-install_extension "user-theme@gnome-shell-extensions.gcampax.github.com.v34.shell-extension"
-install_extension "dash-to-dockmicxgx.gmail.com.v65.shell-extension"
-install_extension "activities-confignls1729.v71.shell-extension"
-install_extension "gnome-shell-aggressive-gc"
-install_extension "gnomeGlobalAppMenu"
-
-# Install gnome-global-app-menu
-mkdir -p ~/.cinnamon-gnome/configs/gnomeGlobalAppMenu@lestcape
-cp ./gnomeGlobalAppMenu@lestcape.json ~/.cinnamon-gnome/configs/gnomeGlobalAppMenu@lestcape/
-
+# Install Github Desktop
 sudo apt install -y ./GitHubDesktop-linux-2.0.4-linux1.deb
+
+# Restore xfce settings
+tar -xzvf .config.tar.gz -C ~/.config/

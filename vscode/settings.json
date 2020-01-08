@@ -1,10 +1,6 @@
 {
     "update.mode": "none",
     "update.showReleaseNotes": true,
-    "files.associations": {
-        "*.cu": "cuda",
-        "*.cuh": "cuda",
-    },
     "search.exclude": {
         "**/build/include": true
     },
