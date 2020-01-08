@@ -1,3 +1,3 @@
 store.set_global_value('hotkey', '<alt>+<shift>+<right>')
-engine.set_return_value('<shift>+<end>')
+store.set_global_value('keycmd', '<shift>+<end>')
 engine.run_script('combo')

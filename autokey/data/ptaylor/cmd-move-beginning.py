@@ -1,3 +1,3 @@
 store.set_global_value('hotkey', '<alt>+<left>')
-engine.set_return_value('<home>')
+store.set_global_value('keycmd', '<home>')
 engine.run_script('combo')
