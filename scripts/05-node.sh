@@ -15,6 +15,8 @@ npm completion | sudo tee /etc/bash_completion.d/npm
 if [ ! "$(grep NODE_BIN_PATH ~/.bashrc)" ]; then
     echo '
 NODE_BIN="$(nvm which current)"
+export NODE_NO_WARNINGS=1
+export NODE_PENDING_DEPRECATION=0
 export NODE_BIN_PATH="$(dirname $NODE_BIN)"
 export NODE_HOME="$(cd $NODE_BIN_PATH/../;pwd)"
 export NODE_INCLUDE_PATH="$NODE_HOME/include/node"

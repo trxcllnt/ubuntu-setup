@@ -9,11 +9,14 @@ mkdir -p ~/Pictures && cp images/*.jpeg ~/Pictures/
 
 sudo apt install -y \
     xfce4-appmenu-plugin \
-    network-manager-openconnect
+    network-manager-openconnect-gnome
 
 # Install sierra-gtk-theme
 sudo add-apt-repository -y ppa:dyatlov-igor/sierra-theme \
- && sudo apt install -y sierra-gtk-theme-git
+ && sudo mv /etc/apt/sources.list.d/dyatlov-igor-ubuntu-sierra-theme-eoan.list \
+            /etc/apt/sources.list.d/dyatlov-igor-ubuntu-sierra-theme-bionic.list \
+ && sudo sed -i "s/eoan/bionic/g" /etc/apt/sources.list.d/dyatlov-igor-ubuntu-sierra-theme-bionic.list \
+ && sudo apt update && sudo apt install -y sierra-gtk-theme-git
 
 # Install OSX fonts
 sudo unzip -q mac-fonts.zip -d /usr/share/fonts; sudo fc-cache -f -v;

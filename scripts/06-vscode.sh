@@ -34,3 +34,11 @@ code --install-extension llvm-vs-code-extensions.vscode-clangd
 
 # Install vscode settings and keybindings
 mkdir -p ~/.config/Code/User/ && cp vscode/*.json ~/.config/Code/User/
+
+[ ! "$(grep SHELL_SESSION_HISTORY ~/.bashrc)" ] && echo '
+export SHELL_SESSION_HISTORY=0
+' >> ~/.bashrc;
+
+[ ! "$(grep DOTNET_CLI_TELEMETRY_OPTOUT ~/.bashrc)" ] && echo '
+export export DOTNET_CLI_TELEMETRY_OPTOUT=1
+' >> ~/.bashrc;
