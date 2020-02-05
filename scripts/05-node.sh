@@ -24,6 +24,7 @@ export NODE_INCLUDE_PATH="$NODE_HOME/include/node"
 fi
 
 echo '
+fund=false
 save-prefix=
 package-lock=false
 update-notifier=false
