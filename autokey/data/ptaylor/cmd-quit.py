@@ -1,3 +1,3 @@
 store.set_global_value('hotkey', '<alt>+q')
-engine.set_return_value('<ctrl>+q')
+store.set_global_value('keycmd', '<ctrl>+q')
 engine.run_script('combo')

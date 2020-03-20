@@ -1,3 +1,3 @@
 store.set_global_value('hotkey', '<super>+<up>')
-engine.set_return_value('<ctrl>+<up>')
+store.set_global_value('keycmd', '<ctrl>+<up>')
 engine.run_script('combo')
