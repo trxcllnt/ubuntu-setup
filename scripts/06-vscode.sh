@@ -5,8 +5,9 @@ set -o errexit
 
 cd $(dirname "$(realpath "$0")")/../
 
-# Install clangd-11, and bear
-release=$(lsb_release -cs)
+# Install clangd-11 and bear
+# release=$(lsb_release -cs)
+release="eoan"
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 echo "deb http://apt.llvm.org/$release/ llvm-toolchain-$release main
 deb-src http://apt.llvm.org/$release/ llvm-toolchain-$release main
