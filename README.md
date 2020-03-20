@@ -15,7 +15,7 @@ _*Don't select either of these options.*_ Instead, move the alert box to the sid
 
 Run `lsblk` in the terminal to verify this, as shown here:
 
-![Step 1](https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/images/step-1.0.png)
+![Step 1](https://github.com/trxcllnt/ubuntu-setup/raw/master/images/step-1.0.png)
 
 If you don't see `/target/boot` and `/target/boot/efi` mount points, run these commands to mount them:
 
