@@ -6,7 +6,7 @@ set -o errexit
 cd $(dirname "$(realpath "$0")")/../
 
 # Install gcc 7 and 8
-sudo apt install gcc-7 g++-7 gcc-8 g++-8
+sudo apt install -y gcc-7 g++-7 gcc-8 g++-8
 
 # Use Ubuntu's update-alternatives utility to switch between GCC versions
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 0
