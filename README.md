@@ -1,6 +1,6 @@
 My setup scripts to bootstrap a new Xubuntu 20.04 install, making it look and feel a bit more like MacOS.
 
-![Ubuntu 18.04.3 Gnome Screenshot](https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/images/screenshot.png)
+![Ubuntu 18.04.3 Gnome Screenshot](https://media.githubusercontent.com/media/trxcllnt/ubuntu-setup/master/images/screenshot.png)
 
 
 ## Installation
@@ -15,7 +15,7 @@ _*Don't select either of these options.*_ Instead, move the alert box to the sid
 
 Run `lsblk` in the terminal to verify this, as shown here:
 
-![Step 1](https://github.com/trxcllnt/ubuntu-setup/raw/master/images/step-1.0.png)
+![Step 1](https://media.githubusercontent.com/media/trxcllnt/ubuntu-setup/master/images/step-1.0.png)
 
 If you don't see `/target/boot` and `/target/boot/efi` mount points, run these commands to mount them:
 
