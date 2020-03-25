@@ -17,6 +17,8 @@ sudo apt update && sudo apt install -y google-chrome-stable
 
 # Install git from ppa and jq
 sudo add-apt-repository -y ppa:git-core/ppa && sudo apt install -y git jq
+# Install git-lfs
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 
 # Install github cli
 GITHUB_VERSION=$(curl -s https://api.github.com/repos/github/hub/releases/latest | jq -r ".tag_name" | tr -d 'v')
