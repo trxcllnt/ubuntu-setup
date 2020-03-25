@@ -12,6 +12,11 @@ sudo apt install -y \
     network-manager-openconnect-gnome
 
 # Install sierra-gtk-theme and plank
+sudo add-apt-repository -y ppa:ricotz/docky || true
+sudo add-apt-repository -y ppa:dyatlov-igor/sierra-theme || true
+sudo rm /etc/apt/sources.list.d/ricotz-ubuntu-docky-*.list
+sudo rm /etc/apt/sources.list.d/dyatlov-igor-ubuntu-sierra-theme-*.list
+
 echo "deb http://ppa.launchpad.net/ricotz/docky/ubuntu eoan main
 # deb-src http://ppa.launchpad.net/ricotz/docky/ubuntu eoan main
 " | sudo tee /etc/apt/sources.list.d/ricotz-ubuntu-docky-eoan.list \
