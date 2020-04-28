@@ -1,6 +1,6 @@
 My setup scripts to bootstrap a new Xubuntu 20.04 install, making it look and feel a bit more like MacOS.
 
-![Ubuntu 18.04.3 Gnome Screenshot](https://media.githubusercontent.com/media/trxcllnt/ubuntu-setup/master/images/screenshot.png)
+![Xubuntu 20.04 Screenshot](https://media.githubusercontent.com/media/trxcllnt/ubuntu-setup/master/images/screenshot.png)
 
 
 ## Installation
@@ -38,18 +38,20 @@ Once you've chroot'd into your Xubuntu installation, download this repo and run 
 
 ```shell
 # Run this while still chroot'd into a fresh ubuntu install in the live USB
-cd /tmp && wget -q -O tmp.zip \
-    https://github.com/trxcllnt/ubuntu-setup/archive/master.zip \
- && unzip tmp.zip && rm tmp.zip \
- && cd ubuntu-setup-master \
- && bash ./pre-boot.sh
+wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/pre-boot.sh | sudo bash
 ```
 
 Once this script is finished, exit your terminal and reboot.
 
 ### Step 2: Install everything else on first boot
 
-After rebooting, you're ready to install everything else. Download this repo and run the `post-boot.sh` script. This script will install:
+After rebooting, you're ready to install everything else.
+
+```shell
+wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/post-boot.sh | sudo bash
+```
+
+This script will install:
 * Older CUDA toolkits and gcc-7/8 for development
 * Latest `git` from the official PPA `ppa:git-core/ppa`
 * Basic apps and development utilities:
@@ -72,14 +74,5 @@ After rebooting, you're ready to install everything else. Download this repo and
   * [Sierra GTK theme](https://github.com/vinceliuice/Sierra-gtk-theme)
   * [OSX El Capitan Cursors theme](https://www.gnome-look.org/content/show.php/OSX+El+Capitan?content=175749)
   * [`autokey-gtk`](https://github.com/autokey/autokey) and a set of MacOS-style key re-binding scripts
-
-```shell
-# Run this on first boot after a fresh install
-cd /tmp && wget -q -O tmp.zip \
-    https://github.com/trxcllnt/ubuntu-setup/archive/master.zip \
- && unzip tmp.zip && rm tmp.zip \
- && cd ubuntu-setup-master \
- && bash ./post-boot.sh
-```
 
 After this script is done, reboot one more time and you're all set!

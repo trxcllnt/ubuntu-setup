@@ -5,7 +5,7 @@ set -o errexit
 
 cd $(dirname "$(realpath "$0")")/../
 
-SLACK_VERSION="4.3.2"
+SLACK_VERSION="4.4.2"
 
 trap 'ERRCODE=$? \
   && cd - \

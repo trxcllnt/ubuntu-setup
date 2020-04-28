@@ -15,11 +15,6 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 sudo apt update && sudo apt install -y google-chrome-stable
 
-# Install git from ppa and jq
-sudo add-apt-repository -y ppa:git-core/ppa && sudo apt install -y git jq
-# Install git-lfs
-curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-
 # Install github cli
 GITHUB_VERSION=$(curl -s https://api.github.com/repos/github/hub/releases/latest | jq -r ".tag_name" | tr -d 'v')
 curl -o ./hub-linux-amd64-${GITHUB_VERSION}.tgz \
