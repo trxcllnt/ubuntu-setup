@@ -31,7 +31,7 @@ sudo unzip -q theme/fonts.zip -d /usr/share/fonts; sudo fc-cache -f -v;
 
 # Install cursors
 tar -xjf theme/cursors.tar.bz2 \
- && sudo cp -rf OSX-ElCap/ /usr/share/icons/OSX-ElCap \
+ && sudo cp -rf OSX-ElCap/OSX-ElCap/ /usr/share/icons/OSX-ElCap \
  && sudo update-alternatives --install \
     /usr/share/icons/default/index.theme \
     x-cursor-theme \
@@ -54,4 +54,4 @@ wget -q -O GitHubDesktop.deb "$GITHUB_DESKTOP_URL" \
   && rm -rf ./GitHubDesktop.deb
 
 # Restore xfce settings
-tar -xzvf .config.tar.gz -C ~/.config/
+tar -xzvf .config.tar.gz -C ~/
