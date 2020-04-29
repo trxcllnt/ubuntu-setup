@@ -5,22 +5,23 @@
         "**/build/include": true
     },
 
-    // "lldb.logLevel": 0,
-    "lldb.verboseLogging": true,
-    // "lldb.showDisassembly": "never",
-    "lldb.suppressMissingSourceFiles": false,
-
     "clangd.syncFileEvents": true,
     "clangd.path": "/usr/bin/clangd",
     "clangd.semanticHighlighting": true,
     "clangd.trace": "/home/ptaylor/.vscode/clangd.log",
     "clangd.arguments": [
         "-j=4",
-        "--log", "info",
-        "--pch-storage=memory",
+        "--log=info",
+        "--pch-storage=disk",
+        "--completion-parse=auto",
+        "--fallback-style=Google",
         "--compile-commands-dir=",
-        "--background-index=false",
-        "--fallback-style", "Chromium"
+        "--background-index=true",
+        "--all-scopes-completion",
+        "--header-insertion=iwyu",
+        "--suggest-missing-includes",
+        "--completion-style=detailed",
+        "--header-insertion-decorators",
     ],
 
     // Controls how lines should wrap. Can be:
@@ -33,9 +34,10 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "editor.detectIndentation": false,
+    "editor.semanticHighlighting.enabled": true,
     "[cpp]": { "editor.tabSize": 2 },
     "[cuda]": { "editor.tabSize": 2 },
-    "[json]": { "editor.tabSize": 2 },
+    "[json]": { "editor.tabSize": 2, "editor.wordWrap": "on" },
 
     "debug.toolBarLocation": "docked",
     "editor.fontFamily": "Menlo, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
