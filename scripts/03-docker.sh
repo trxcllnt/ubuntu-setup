@@ -6,7 +6,8 @@ set -o errexit
 cd $(dirname "$(realpath "$0")")/../
 
 # Install docker-ce
-release=$(lsb_release -cs) \
+# release=$(lsb_release -cs) \
+release="eoan" \
  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - \
  && sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $release stable" \
  && sudo apt install -y docker-ce \
