@@ -59,10 +59,12 @@ sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.0 0
 sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.1 0
 sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.2 100
 
-[ ! "$(grep CUDA_HOME ~/.bashrc)" ] && echo '
+if [ ! "$(grep CUDA_HOME ~/.bashrc)" ]; then
+    echo '
 export CUDA_HOME="/usr/local/cuda"
 export PATH="$PATH:$CUDA_HOME/bin"
 ' >> ~/.bashrc;
+fi
 
 # Set gcc-9 back as the default
 sudo update-alternatives --set gcc /usr/bin/gcc-9
