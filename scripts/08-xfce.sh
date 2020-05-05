@@ -48,10 +48,13 @@ wget https://github.com/autokey/autokey/releases/download/v${AUTOKEY_VERSION}/au
  && mkdir -p ~/.config && cp -r autokey ~/.config/
 
 # Install Github Desktop
-GITHUB_DESKTOP_URL=$(curl -s https://api.github.com/repos/shiftkey/desktop/releases | jq -r ".[0].assets[].browser_download_url" | grep ".deb" | head -n1)
-wget -q -O GitHubDesktop.deb "$GITHUB_DESKTOP_URL" \
-  && sudo apt install -y ./GitHubDesktop.deb \
-  && rm -rf ./GitHubDesktop.deb
+sudo apt install -y ./GitHubDesktop-linux-2.0.4-linux1.deb
+
+# Install Github Desktop
+# GITHUB_DESKTOP_URL=$(curl -s https://api.github.com/repos/shiftkey/desktop/releases | jq -r ".[0].assets[].browser_download_url" | grep ".deb" | head -n1)
+# wget -q -O GitHubDesktop.deb "$GITHUB_DESKTOP_URL" \
+#   && sudo apt install -y ./GitHubDesktop.deb \
+#   && rm -rf ./GitHubDesktop.deb
 
 # Restore xfce settings
 tar -xzvf .config.tar.gz -C ~/
