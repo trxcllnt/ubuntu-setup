@@ -32,14 +32,18 @@ sudo cp /etc/resolv.conf /target/etc/
 sudo chroot /target
 ```
 
-Once you've chroot'd into your Xubuntu installation, download this repo and run the `pre-boot.sh` script. This script will install:
-* A few prerequisite system dependencies (curl, zlib, qt-5, exfat-utils, etc.)
-* The latest NVIDIA CUDA toolkit and drivers. This ensures you have a working GPU on your first boot.
+Once you've chroot'd into your Xubuntu installation, run the `pre-boot.sh` script:
 
 ```shell
 # Run this while still chroot'd into a fresh ubuntu install in the live USB
 wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/pre-boot.sh | sudo bash
 ```
+
+This script will install:
+* [`jq`](https://stedolan.github.io/jq/)
+* Latest `git` from the official PPA `ppa:git-core/ppa`
+* A few prerequisite system dependencies (git-lfs, curl, zlib, qt-5, exfat-utils, etc.)
+* The latest NVIDIA CUDA toolkit and drivers. This ensures you have a working GPU on your first boot.
 
 Once this script is finished, exit your terminal and reboot.
 
@@ -53,10 +57,8 @@ wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/post-bo
 
 This script will install:
 * Older CUDA toolkits and gcc-7/8 for development
-* Latest `git` from the official PPA `ppa:git-core/ppa`
 * Basic apps and development utilities:
   * [Google Chrome](https://www.google.com/chrome/index.html)
-  * [`jq`](https://stedolan.github.io/jq/)
   * [`github-cli`](https://github.com/github/hub)
   * [`fd`](https://github.com/sharkdp/fd)
   * [`bat`](https://github.com/sharkdp/fd)
