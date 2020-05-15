@@ -30,10 +30,6 @@ package-lock=false
 update-notifier=false
 ' > ~/.npmrc
 
-# node-3d dependencies
-sudo add-apt-repository -y "deb http://security.ubuntu.com/ubuntu xenial-security main"
-sudo apt install -y libjasper1 libjasper-dev
-
 source ~/.bashrc
 
 # Install yarn
