@@ -39,5 +39,5 @@ export SHELL_SESSION_HISTORY=0
 ' >> ~/.bashrc;
 
 [ ! "$(grep DOTNET_CLI_TELEMETRY_OPTOUT ~/.bashrc)" ] && echo '
-export export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 ' >> ~/.bashrc;
