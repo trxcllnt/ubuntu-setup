@@ -53,6 +53,17 @@ if [ ! -d /usr/local/cuda-10.1/targets/x86_64-linux ]; then
     sudo ln -s /usr/local/cuda-10.1/include /usr/local/cuda-10.1/targets/x86_64-linux/include
 fi
 
+# Install cuda-toolkit 10.2
+wget -O /tmp/cuda_10.2.run \
+    http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run
+sudo sh /tmp/cuda_10.2.run --toolkit --toolkitpath=/usr/local/cuda-10.2 --silent
+rm -rf /tmp/cuda_10.2.run
+
+if [ ! -d /usr/local/cuda-10.2/targets/x86_64-linux ]; then
+    sudo mkdir -p /usr/local/cuda-10.2/targets/x86_64-linux
+    sudo ln -s /usr/local/cuda-10.2/include /usr/local/cuda-10.2/targets/x86_64-linux/include
+fi
+
 # Install update-alternatives for each CUDA version
 sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-9.2 0
 sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.0 0
