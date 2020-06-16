@@ -47,12 +47,37 @@ This script will install:
 
 Once this script is finished, exit your terminal and reboot.
 
-### Step 2: Install everything else on first boot
+### Step 2: Reboot into your new install
 
-After rebooting, you're ready to install everything else.
+Reboot into your new install. Login so Ubuntu runs all the initialization for your new user.
 
-```shell
-wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/post-boot.sh | sudo bash
+Then reboot and go back into the live USB.
+
+### Step 3: Reboot into the live USB again, install everything else
+
+After rebooting into the live USB, you're ready to install everything else.
+
+System76 has [a good article](https://support.system76.com/articles/pop-recovery/#repair) on mounting encrypted partitions, but I'll re-post the commands I use here:
+
+```bash
+# 1. Decrypt the encrypted partition
+$ sudo cryptsetup luksOpen /dev/nvme0n1p3 cryptdata
+$ sudo lvscan
+$ sudo vgchange -ay
+
+# 2. Mount the decrypted partition
+$ sudo mount /dev/mapper/<name-of-mapped-drive-from-previous-command>-root /mnt
+$ sudo mount /dev/nvme0n1p2 /mnt/boot
+$ sudo mount /dev/nvme0n1p1 /mnt/boot/efi
+
+# 3. Chroot into your mounted drive
+$ for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+$ sudo cp /etc/resolv.conf /mnt/etc/
+$ sudo chroot /mnt
+
+# Now install all the apps/settings
+\# su <your username>
+\# wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/post-boot.sh | sudo bash
 ```
 
 This script will install:
