@@ -46,7 +46,7 @@ fi
 
 # Install fzf
 if [ ! -d ~/.fzf ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install || true
     echo '
 # Set fd as the default source for fzf
 # Follow symbolic links, search hidden files, exclude gitignored files
