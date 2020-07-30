@@ -35,7 +35,7 @@ sudo dpkg -i bat_*.deb
 
 # Add a `disk-usage` bash alias for printing and sorting file size stats
 touch ~/.bash_aliases
-if [ ! "$(grep disk-usage ~/.bash_aliases)" ]; then
+if [ -z "$(grep disk-usage ~/.bash_aliases)" ]; then
     echo '
 disk-usage() {
     du -Sh ${1:-.} | sort -rh | head "${@:2}"
@@ -45,8 +45,8 @@ export -f disk-usage;
 fi
 
 # Install fzf
-if [ ! -d ~/.fzf ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install || true
+if [ -z "$(which fzf)" ]; then
+    sudo apt install fzf
     echo '
 # Set fd as the default source for fzf
 # Follow symbolic links, search hidden files, exclude gitignored files
