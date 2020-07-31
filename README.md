@@ -66,6 +66,7 @@ After rebooting into the live USB, you're ready to install everything else.
 
 System76 has [a good article](https://support.system76.com/articles/pop-recovery/#repair) on mounting encrypted partitions, but I'll re-post the commands I use here:
 
+If you setup LUKS encyrption when you installed, decrypt the drive before mounting the partitions:
 ```bash
 # 1. Decrypt the encrypted partition
 $ sudo cryptsetup luksOpen /dev/nvme0n1p3 cryptdata
@@ -74,7 +75,17 @@ $ sudo vgchange -ay
 
 # 2. Mount the decrypted partition
 $ sudo mount /dev/mapper/<name-of-mapped-drive-from-previous-command>-root /mnt
+```
+
+Now mount your `/boot` and `/boot/efi` partitions.
+
+```bash
+# In some configurations, `/boot` will be on the root partition (the one at `/mnt`)
+# Check to see if `/mnt/boot` already exists -- if so, you can skip this line:
 $ sudo mount /dev/nvme0n1p2 /mnt/boot
+
+# `/boot/efi` is usually on a separate partition if dual-booting with Windows
+# If `/mnt/boot/efi` already exists and has an "EFI" folder, skip this line:
 $ sudo mount /dev/nvme0n1p1 /mnt/boot/efi
 
 # 3. Chroot into your mounted drive
