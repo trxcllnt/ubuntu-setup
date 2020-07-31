@@ -9,9 +9,14 @@ Installation is broken up into two steps. The first step is run from the live CD
 
 ### Step 1: Install Xubuntu from live CD/USB
 
-Install Xubuntu from a live USB. When the installer completes, it will show an alert box with options "Continue Testing", and "Restart Now".
+* Boot Xubuntu from a live USB
+* Select the "Try Xubuntu without installing" option
+* When you see the desktop, launch the "Install Xubuntu" installer
+* When the installer completes, it will show an alert box with options "Continue Testing", and "Restart Now"
+* ***Don't select either of these options._***
 
-_*Don't select either of these options.*_ Instead, move the alert box to the side, and open a terminal window. As long as the alert box is open, your new Xubuntu installation will still be mounted at `/target`.
+#### Instead, move the alert box to the side, and open a terminal window.
+#### As long as the alert box is open, your new Xubuntu installation will still be mounted at `/target`.
 
 Run `lsblk` in the terminal to verify this, as shown here:
 
