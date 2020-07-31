@@ -13,10 +13,12 @@ Installation is broken up into two steps. The first step is run from the live CD
 * Select the "Try Xubuntu without installing" option
 * When you see the desktop, launch the "Install Xubuntu" installer
 * When the installer completes, it will show an alert box with options "Continue Testing", and "Restart Now"
-* ***Don't select either of these options._***
 
-#### Instead, move the alert box to the side, and open a terminal window.
-#### As long as the alert box is open, your new Xubuntu installation will still be mounted at `/target`.
+***Don't select either of these options***
+
+**Instead, move the alert box to the side, and open a terminal window.**
+
+**As long as the alert box is open, your new Xubuntu installation will still be mounted at `/target`.**
 
 Run `lsblk` in the terminal to verify this, as shown here:
 
@@ -41,7 +43,7 @@ Once you've chroot'd into your Xubuntu installation, run the `pre-boot.sh` scrip
 
 ```shell
 # Run this while still chroot'd into a fresh ubuntu install in the live USB
-wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/pre-boot.sh | sudo bash
+wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/pre-boot.sh | bash
 ```
 
 This script will install:
