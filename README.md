@@ -77,7 +77,7 @@ $ sudo chroot /mnt
 
 # Now install all the apps/settings
 \# su <your username>
-\# wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/post-boot.sh | sudo bash
+\# wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/post-boot.sh | bash
 ```
 
 This script will install:
