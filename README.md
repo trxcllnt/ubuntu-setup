@@ -9,9 +9,16 @@ Installation is broken up into two steps. The first step is run from the live CD
 
 ### Step 1: Install Xubuntu from live CD/USB
 
-Install Xubuntu from a live USB. When the installer completes, it will show an alert box with options "Continue Testing", and "Restart Now".
+* Boot Xubuntu from a live USB
+* Select the "Try Xubuntu without installing" option
+* When you see the desktop, launch the "Install Xubuntu" installer
+* When the installer completes, it will show an alert box with options "Continue Testing", and "Restart Now"
 
-_*Don't select either of these options.*_ Instead, move the alert box to the side, and open a terminal window. As long as the alert box is open, your new Xubuntu installation will still be mounted at `/target`.
+***Don't select either of these options***
+
+**Instead, move the alert box to the side, and open a terminal window.**
+
+**As long as the alert box is open, your new Xubuntu installation will still be mounted at `/target`.**
 
 Run `lsblk` in the terminal to verify this, as shown here:
 
@@ -36,7 +43,7 @@ Once you've chroot'd into your Xubuntu installation, run the `pre-boot.sh` scrip
 
 ```shell
 # Run this while still chroot'd into a fresh ubuntu install in the live USB
-wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/pre-boot.sh | sudo bash
+wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/pre-boot.sh | bash
 ```
 
 This script will install:
@@ -59,6 +66,7 @@ After rebooting into the live USB, you're ready to install everything else.
 
 System76 has [a good article](https://support.system76.com/articles/pop-recovery/#repair) on mounting encrypted partitions, but I'll re-post the commands I use here:
 
+If you setup LUKS encyrption when you installed, decrypt the drive before mounting the partitions:
 ```bash
 # 1. Decrypt the encrypted partition
 $ sudo cryptsetup luksOpen /dev/nvme0n1p3 cryptdata
@@ -67,7 +75,17 @@ $ sudo vgchange -ay
 
 # 2. Mount the decrypted partition
 $ sudo mount /dev/mapper/<name-of-mapped-drive-from-previous-command>-root /mnt
+```
+
+Now mount your `/boot` and `/boot/efi` partitions.
+
+```bash
+# In some configurations, `/boot` will be on the root partition (the one at `/mnt`)
+# Check to see if `/mnt/boot` already exists -- if so, you can skip this line:
 $ sudo mount /dev/nvme0n1p2 /mnt/boot
+
+# `/boot/efi` is usually on a separate partition if dual-booting with Windows
+# If `/mnt/boot/efi` already exists and has an "EFI" folder, skip this line:
 $ sudo mount /dev/nvme0n1p1 /mnt/boot/efi
 
 # 3. Chroot into your mounted drive
@@ -77,7 +95,7 @@ $ sudo chroot /mnt
 
 # Now install all the apps/settings
 \# su <your username>
-\# wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/post-boot.sh | sudo bash
+\# wget -qO- https://raw.githubusercontent.com/trxcllnt/ubuntu-setup/master/post-boot.sh | bash
 ```
 
 This script will install:
