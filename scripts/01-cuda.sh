@@ -39,10 +39,34 @@ if [ ! -d /usr/local/cuda-10.2/targets/x86_64-linux ]; then
     sudo ln -s /usr/local/cuda-10.2/include /usr/local/cuda-10.2/targets/x86_64-linux/include
 fi
 
+# Install cuda-toolkit 11.0
+wget -O /tmp/cuda_11.0.run \
+    https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda_11.0.3_450.51.06_linux.run
+sudo sh /tmp/cuda_11.0.run --toolkit --toolkitpath=/usr/local/cuda-11.0 --silent
+rm -rf /tmp/cuda_11.0.run
+
+if [ ! -d /usr/local/cuda-11.0/targets/x86_64-linux ]; then
+    sudo mkdir -p /usr/local/cuda-11.0/targets/x86_64-linux
+    sudo ln -s /usr/local/cuda-11.0/include /usr/local/cuda-11.0/targets/x86_64-linux/include
+fi
+
+# Install cuda-toolkit 11.1
+wget -O /tmp/cuda_11.1.run \
+    https://developer.download.nvidia.com/compute/cuda/11.1.1/local_installers/cuda_11.1.1_455.32.00_linux.run
+sudo sh /tmp/cuda_11.1.run --toolkit --toolkitpath=/usr/local/cuda-11.1 --silent
+rm -rf /tmp/cuda_11.1.run
+
+if [ ! -d /usr/local/cuda-11.1/targets/x86_64-linux ]; then
+    sudo mkdir -p /usr/local/cuda-11.1/targets/x86_64-linux
+    sudo ln -s /usr/local/cuda-11.1/include /usr/local/cuda-11.1/targets/x86_64-linux/include
+fi
+
 CURRENT_CUDA_VERSION="$(/usr/local/cuda/bin/nvcc --version | head -n4 | tail -n1 | cut -d' ' -f5 | cut -d',' -f1)"
 
 # Install update-alternatives for each CUDA version
 sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.2 0
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.0 0
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.1 0
 # set the latest apt-installed CUDA version as the highest priority
 sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-$CURRENT_CUDA_VERSION 100
 
