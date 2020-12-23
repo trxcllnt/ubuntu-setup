@@ -26,7 +26,6 @@ done;
 
 # Make gcc-7 the default while we install the older CUDA toolkits
 sudo update-alternatives --set gcc /usr/bin/gcc-7
-sudo update-alternatives --set g++ /usr/bin/g++-7
 
 # Install cuda-toolkit 10.2
 wget -O /tmp/cuda_10.2.run \
@@ -79,4 +78,3 @@ fi
 
 # Set gcc-9 back as the default
 sudo update-alternatives --set gcc /usr/bin/gcc-9
-sudo update-alternatives --set g++ /usr/bin/g++-9
