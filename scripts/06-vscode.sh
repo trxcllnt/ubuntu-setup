@@ -8,8 +8,8 @@ cd $(dirname "$(realpath "$0")")/../
 # Install clangd and bear
 release=$(lsb_release -cs);
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -;
-echo "deb http://apt.llvm.org/$release/ llvm-toolchain-$release main
-deb-src http://apt.llvm.org/$release/ llvm-toolchain-$release main
+echo "deb http://apt.llvm.org/$release/ llvm-toolchain-$release-12 main
+deb-src http://apt.llvm.org/$release/ llvm-toolchain-$release-12 main
 " | sudo tee /etc/apt/sources.list.d/llvm.list
 
 sudo apt update && sudo apt install -y clangd-12 bear
