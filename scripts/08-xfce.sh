@@ -62,3 +62,6 @@ tar -xzvf .config.tar.gz -C ~/
 # https://gitlab.com/vala-panel-project/vala-panel-appmenu#desktop-environment-specific-settings
 xfconf-query -c xsettings -p /Gtk/ShellShowsMenubar -n -t bool -s true
 xfconf-query -c xsettings -p /Gtk/ShellShowsAppmenu -n -t bool -s true
+
+# https://github.com/rilian-la-te/vala-panel-appmenu/blob/master/subprojects/appmenu-gtk-module/README.md#usage-instructions
+xfconf-query -c xsettings -p /Gtk/Modules -n -t string -s "appmenu-gtk-module"
