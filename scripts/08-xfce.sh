@@ -58,3 +58,7 @@ sudo apt install -y ./GitHubDesktop-linux-2.0.4-linux1.deb
 
 # Restore xfce settings
 tar -xzvf .config.tar.gz -C ~/
+
+# https://gitlab.com/vala-panel-project/vala-panel-appmenu#desktop-environment-specific-settings
+xfconf-query -c xsettings -p /Gtk/ShellShowsMenubar -n -t bool -s true
+xfconf-query -c xsettings -p /Gtk/ShellShowsAppmenu -n -t bool -s true
