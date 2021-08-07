@@ -56,6 +56,3 @@ sudo apt install -y ./GitHubDesktop-linux-2.0.4-linux1.deb
 
 # Restore xfce settings
 tar -xzvf .config.tar.gz -C ~/
-
-# Build and install the xfce4-appmenu-plugin from source
-source ./scripts/build-and-install-xfce4-appmenu.sh

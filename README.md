@@ -120,4 +120,13 @@ This script will install:
   * [OSX El Capitan Cursors theme](https://www.gnome-look.org/content/show.php/OSX+El+Capitan?content=175749)
   * [`autokey-gtk`](https://github.com/autokey/autokey) and a set of MacOS-style key re-binding scripts
 
-After this script is done, reboot one more time and you're all set!
+After this script is done, reboot into Xubuntu.
+
+Run the following script to fix xfce4 global appmenu plugin:
+
+```shell
+# Build and install the xfce4-appmenu-plugin from source
+source ./scripts/build-and-install-xfce4-appmenu.sh
+```
+
+And now you're all set!
