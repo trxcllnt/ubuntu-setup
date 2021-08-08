@@ -11,7 +11,7 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt update \
  && sudo apt upgrade --fix-missing -y \
  && sudo apt install -y \
-    jq curl zlib1g-dev libssl-dev libcurl4-openssl-dev qt5-default exfat-utils \
+    jq gpg wget curl zlib1g-dev libssl-dev libcurl4-openssl-dev qt5-default exfat-utils \
     apt-transport-https ca-certificates gnupg-agent software-properties-common \
  && sudo add-apt-repository -y ppa:git-core/ppa && sudo apt update \
  && sudo apt install -y git git-lfs \
