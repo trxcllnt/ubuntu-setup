@@ -5,7 +5,7 @@ set -o errexit
 
 export DEBIAN_FRONTEND=noninteractive
 
-git clone https://github.com/trxcllnt/ubuntu-setup.git /tmp/ubuntu-setup \
+git clone ${@} https://github.com/trxcllnt/ubuntu-setup.git /tmp/ubuntu-setup \
  && cd /tmp/ubuntu-setup \
  && git lfs pull
 
