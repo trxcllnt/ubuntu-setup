@@ -21,7 +21,7 @@ sudo curl \
 # Install compose-cli and docker compose v2
 curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh \
  && mkdir -p ~/.docker/cli-plugins/ \
- && DOCKER_COMPOSE_CLI_VERSION=2.0.0-beta.6 \
+ && DOCKER_COMPOSE_CLI_VERSION=2.0.0-rc.2 \
  && _ARCH=$(dpkg-architecture -q DEB_BUILD_ARCH) \
  && _ARCH_OS=$(dpkg-architecture -q DEB_BUILD_ARCH_OS) \
  && curl \
