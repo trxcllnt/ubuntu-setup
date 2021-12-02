@@ -12,23 +12,20 @@ release=$(lsb_release -cs) \
  && sudo apt install -y docker-ce \
  && sudo usermod -aG docker $USER
 
-# Install docker-compose
+# Install docker compose v2
+sudo mkdir -p /usr/local/lib/docker/cli-plugins
 DOCKER_COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r ".tag_name" | tr -d 'v')
 sudo curl \
-    -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-`uname -s`-`uname -m` \
-    -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose
+    -L https://github.com/docker/compose/releases/download/v$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m) \
+    -o /usr/local/lib/docker/cli-plugins/docker-compose && sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
-# Install compose-cli and docker compose v2
-curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh \
- && mkdir -p ~/.docker/cli-plugins/ \
- && DOCKER_COMPOSE_CLI_VERSION=2.0.0-rc.2 \
- && _ARCH=$(dpkg-architecture -q DEB_BUILD_ARCH) \
- && _ARCH_OS=$(dpkg-architecture -q DEB_BUILD_ARCH_OS) \
- && curl \
-    -L https://github.com/docker/compose-cli/releases/download/v$DOCKER_COMPOSE_CLI_VERSION/docker-compose-$_ARCH_OS-$_ARCH \
-    -o ~/.docker/cli-plugins/docker-compose \
- && chmod +x ~/.docker/cli-plugins/docker-compose \
- && docker compose version
+# Install compose-switch (backwards compat for docker-compose)
+DOCKER_COMPOSE_SWITCH_VERSION=$(curl -s https://api.github.com/repos/docker/compose-switch/releases/latest | jq -r ".tag_name" | tr -d 'v')
+sudo curl \
+    -L https://github.com/docker/compose-switch/releases/download/v$DOCKER_COMPOSE_SWITCH_VERSION/docker-compose-$(uname -s)-$(dpkg-architecture -q DEB_BUILD_ARCH) \
+    -o /usr/local/bin/compose-switch && sudo chmod +x /usr/local/bin/compose-switch
+
+update-alternatives --install /usr/local/bin/docker-compose docker-compose /usr/local/bin/compose-switch 99
 
 # Install nvidia-docker2
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
