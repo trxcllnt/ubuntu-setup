@@ -25,7 +25,7 @@ sudo curl \
     -L https://github.com/docker/compose-switch/releases/download/v$DOCKER_COMPOSE_SWITCH_VERSION/docker-compose-$(uname -s)-$(dpkg-architecture -q DEB_BUILD_ARCH) \
     -o /usr/local/bin/compose-switch && sudo chmod +x /usr/local/bin/compose-switch
 
-update-alternatives --install /usr/local/bin/docker-compose docker-compose /usr/local/bin/compose-switch 99
+sudo update-alternatives --install /usr/local/bin/docker-compose docker-compose /usr/local/bin/compose-switch 99
 
 # Install nvidia-docker2
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
