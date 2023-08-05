@@ -1,3 +1,8 @@
+# Deprecation notice
+
+Deprecating this repo in favor of instructions for creating a [custom Xubuntu ISO](https://github.com/trxcllnt/custom-xubuntu-iso).
+
+
 My setup scripts to bootstrap a new [Xubuntu 20.04](https://xubuntu.org/) install, making it look and feel a bit more like MacOS.
 
 ![Xubuntu 20.04 Screenshot](https://media.githubusercontent.com/media/trxcllnt/ubuntu-setup/master/images/screenshot.png)
